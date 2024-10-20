@@ -95,7 +95,7 @@ jobs:
           git config user.email tsvsumanth47@gmail.com
           git config user.name tsvsumanth47
           cat manifests/deployment.yaml
-          cd manifests && sed -i 's+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo.*+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo:${{ github.sha }}+g' deployment.yaml
+          sed -i 's+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo.*+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo:${{ github.sha }}+g' manifests/deployment.yaml
           cat manifests/deployment.yaml
           git add -A
           git commit -m 'Done by github actions changemanifest: ${{ github.sha }}'
