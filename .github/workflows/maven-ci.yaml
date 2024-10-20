@@ -5,7 +5,11 @@ on:
       config-path:
         required: true
         type: string
-          
+    secrets:
+      SONAR_TOKEN:
+         required: true
+         type: string
+
 permissions:
   contents: read
   id-token: write
