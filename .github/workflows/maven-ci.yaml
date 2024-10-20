@@ -96,8 +96,8 @@ jobs:
           git config user.name tsvsumanth47
           cat manifests/deployment.yaml
           SERVICE_VERSION=`git rev-parse --short HEAD`
-          sed -i 's+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo.*+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo:${{ SERVICE_VERSION }}+g' manifests/deployment.yaml
+          sed -i 's+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo.*+339712826475.dkr.ecr.us-west-2.amazonaws.com/myapprepo:${SERVICE_VERSION}+g' manifests/deployment.yaml
           cat manifests/deployment.yaml
           git add -A
-          git commit -m 'Done by github actions changemanifest: ${{ github.sha }}'
+          git commit -m 'Done by github actions changemanifest: ${SERVICE_VERSION}'
           git push https://github.com/tsvsumanth47/argocd-k8s-manifests.git HEAD:main
