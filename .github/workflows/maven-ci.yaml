@@ -91,6 +91,8 @@ jobs:
 
 
       - name: Update the kubernetes manifests file
+        permissions:
+          contents: write
         run: |
           echo 'testing job'
           git config user.email tsvsumanth47@gmail.com
