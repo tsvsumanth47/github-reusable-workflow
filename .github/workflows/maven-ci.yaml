@@ -40,18 +40,18 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@v3.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
-        with:
-          projectBaseDir: demo
-          args: >
-           -Dsonar.organization=tsvsumanth47
-           -Dsonar.projectKey=tsvsumanth47_myapp-repo
-           -Dsonar.python.coverage.reportPaths=coverage.xml
-           -Dsonar.sources=lib/
-           -Dsonar.test.exclusions=tests/**
-           -Dsonar.tests=tests/
-           -Dsonar.verbose=true
+     # - name: Analyze with SonarCloud
+      #  uses: sonarsource/sonarcloud-github-action@v3.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
+       # with:
+        #  projectBaseDir: demo
+         # args: >
+          # -Dsonar.organization=tsvsumanth47
+          # -Dsonar.projectKey=tsvsumanth47_myapp-repo
+          # -Dsonar.python.coverage.reportPaths=coverage.xml
+          # -Dsonar.sources=lib/
+          # -Dsonar.test.exclusions=tests/**
+          # -Dsonar.tests=tests/
+          # -Dsonar.verbose=true
       #- name: Build and analyze
        # env:
        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
